@@ -5,13 +5,18 @@ set -e
 root=$(dirname $(readlink -f "$0"))
 cd $root
 
-# 移除历史文件
-rm -rf $root/hackernel $root/uranus $root/uranus-webui-react
-
 # 拉项目源码
-git clone https://github.com/freshdom/hackernel.git
-git clone https://github.com/freshdom/uranus.git
-git clone https://github.com/freshdom/uranus-webui-react.git
+if [ ! -d $root/hackernel ]; then
+        git clone https://github.com/freshdom/hackernel.git
+fi
+
+if [ ! -d $root/uranus ]; then
+        git clone https://github.com/freshdom/uranus.git
+fi
+
+if [ ! -d $root/uranus-webui-react ]; then
+        git clone https://github.com/freshdom/uranus-webui-react.git
+fi
 
 # 编译调试版本的内核模块
 cd $root/hackernel/kernel-space/
