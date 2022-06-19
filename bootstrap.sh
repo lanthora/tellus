@@ -14,8 +14,8 @@ if [ ! -d $root/uranus ]; then
         git clone https://github.com/freshdom/uranus.git
 fi
 
-if [ ! -d $root/uranus-webui-react ]; then
-        git clone https://github.com/freshdom/uranus-webui-react.git
+if [ ! -d $root/uranus-webui ]; then
+        git clone https://github.com/freshdom/uranus-webui.git
 fi
 
 # 编译调试版本的内核模块
@@ -28,10 +28,10 @@ cmake $root/hackernel/user-space/ -DCMAKE_BUILD_TYPE=Debug
 make
 
 # 前端打包
-cd $root/uranus-webui-react
+cd $root/uranus-webui
 npm install
 npm run build
-cp -r $root/uranus-webui-react/build/* $root/uranus/internal/web/webui/
+cp -r $root/uranus-webui/build/* $root/uranus/internal/web/webui/
 
 # 打包后端服务
 cd $root/uranus
