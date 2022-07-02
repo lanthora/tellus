@@ -1,4 +1,4 @@
-!.gitignore
-!.bootstrap.sh
-!.LICENSE
-*
+/hackernel
+/uranus
+/cronus
+/venus
