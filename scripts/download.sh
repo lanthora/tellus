@@ -1,11 +1,9 @@
 #/bin/bash
 
-set -e
-
 workdir=$(dirname $(dirname $(readlink -f "$0")))
-cd $workdir
 
 download() {
+        cd $workdir
         project=${1}
         if [ ! -d $workdir/$project ]; then
                 git clone https://github.com/freshdom/$project.git

@@ -1,11 +1,10 @@
 #/bin/bash
 
-set -e
-
 workdir=$(dirname $(dirname $(readlink -f "$0")))
 
 systemctl stop uranus-web
 systemctl stop hackernel
+modprobe -r hackernel
 
 cd $workdir/hackernel/kernel-space/
 make remove
