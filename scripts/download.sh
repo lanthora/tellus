@@ -17,4 +17,4 @@ download() {
 
 download hackernel
 download uranus
-download cronus
+download venus
