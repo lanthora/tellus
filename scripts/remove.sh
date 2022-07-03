@@ -1,5 +1,5 @@
 #/bin/bash
-
+set -e
 workdir=$(dirname $(dirname $(readlink -f "$0")))
 
 systemctl stop uranus-web
