@@ -6,7 +6,7 @@ download() {
         cd $workdir
         project=${1}
         if [ ! -d $workdir/$project ]; then
-                git clone https://github.com/freshdom/$project.git
+                git clone git@github.com:lanthora/$project.git
         else
                 cd $workdir/$project
                 git stash
