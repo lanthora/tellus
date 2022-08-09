@@ -13,6 +13,7 @@ make
 cd $workdir/venus
 npm install
 npm run build
+rm -rf $workdir/uranus/internal/web/webui/*
 cp -r $workdir/venus/build/* $workdir/uranus/internal/web/webui/
 
 cd $workdir/uranus

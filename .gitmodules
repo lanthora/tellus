@@ -1,0 +1,9 @@
+[submodule "hackernel"]
+	path = hackernel
+	url = git@github.com:lanthora/hackernel.git
+[submodule "uranus"]
+	path = uranus
+	url = git@github.com:lanthora/uranus.git
+[submodule "venus"]
+	path = venus
+	url = git@github.com:lanthora/venus.git

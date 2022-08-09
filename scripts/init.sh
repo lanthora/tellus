@@ -1,5 +1,6 @@
 #/bin/bash
 set -e
 workdir=$(dirname $(dirname $(readlink -f "$0")))
+cd $workdir
 
-echo "欢迎使用"
+git submodule update --init --recursive

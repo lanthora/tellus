@@ -1,20 +1,10 @@
-help:
-	@scripts/help.sh
+default:
+	@scripts/init.sh
+	@scripts/build.sh
+	@scripts/hello.sh
 
-download:
-	@scripts/download.sh
+init:
+	@scripts/init.sh
 
-debug:
-	@scripts/debug.sh
-
-release:
-	@scripts/release.sh
-
-clean:
-	@scripts/clean.sh
-
-install:
-	@scripts/install.sh
-
-remove:
-	@scripts/remove.sh
+build:
+	@scripts/build.sh
