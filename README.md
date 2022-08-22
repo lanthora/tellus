@@ -50,7 +50,24 @@
 
 ## 如何部署
 
-上述的编译过程事实上已经有了所有的必要模块.但是在生产环境中还可以优化.
+执行 `make install` 把需要的模块都安装到系统中,此操作需要 root 权限.
+内核模块依赖 `dkms`,需要预先安装.
 
-* 内核模块支持 DKMS, 提供了开机启动的配置文件
-* 服务提供 systemd service 配置文件
+安装成功后手动加载内核模块 `modprobe hackernel`,或直接重启.
+
+内核加载成功后分别开两个窗口执行 `hackernel` 和 `uranus-sample`.
+开启第三个窗口随意执行一些命令并观察 `uranus-sample` 的输出.
+如果输出内容中有刚才执行的命令,代表测试通过.
+
+服务类进程提供了 systemd service 文件:
+
+* hackernel.service
+* uranus-telegram.service
+* uranus-web.service
+
+以及对应的配置文件:
+
+* /etc/hackernel/telegram.yaml
+* /etc/hackernel/web.yaml
+
+`make remove` 可以删除所有安装到系统中的文件.
