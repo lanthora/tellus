@@ -8,3 +8,9 @@ init:
 
 build:
 	@scripts/build.sh
+
+install:
+	@scripts/install.sh
+
+remove:
+	@scripts/remove.sh
