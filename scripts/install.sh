@@ -3,10 +3,15 @@ set -v
 workdir=$(dirname $(dirname $(readlink -f "$0")))
 
 cd $workdir/hackernel/kernel-space/
-make clean
-DRIVER_VERSION=$(grep -Po '(?<=^PACKAGE_VERSION=")(.*)(?="$)' dkms.conf)
-mkdir -p $DESTDIR/usr/src/hackernel-$DRIVER_VERSION
-cp -r $workdir/hackernel/kernel-space/* $DESTDIR/usr/src/hackernel-$DRIVER_VERSION
+if [[ -z ${DESTDIR+x} || $DESTDIR = '/' ]] 
+then
+        make install
+else
+        make clean
+        DRIVER_VERSION=$(grep -Po '(?<=^PACKAGE_VERSION=")(.*)(?="$)' dkms.conf)
+        mkdir -p $DESTDIR/usr/src/hackernel-$DRIVER_VERSION
+        cp -r $workdir/hackernel/kernel-space/* $DESTDIR/usr/src/hackernel-$DRIVER_VERSION
+fi
 
 mkdir -p $DESTDIR/usr/sbin/
 cp $workdir/hackernel/user-space/build/hackernel $DESTDIR/usr/sbin/hackernel
