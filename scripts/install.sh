@@ -13,19 +13,19 @@ else
         cp -r $workdir/hackernel/kernel-space/* $DESTDIR/usr/src/hackernel-$DRIVER_VERSION
 fi
 
-mkdir -p $DESTDIR/usr/sbin/
-cp $workdir/hackernel/user-space/build/hackernel $DESTDIR/usr/sbin/hackernel
-cp $workdir/uranus/cmd/sample/uranus-sample $DESTDIR/usr/sbin/uranus-sample
-cp $workdir/uranus/cmd/telegram/uranus-telegram $DESTDIR/usr/sbin/uranus-telegram
-cp $workdir/uranus/cmd/web/uranus-web $DESTDIR/usr/sbin/uranus-web
+mkdir -p $DESTDIR/usr/bin/
+cp $workdir/hackernel/user-space/build/hackernel $DESTDIR/usr/bin/hackernel
+cp $workdir/uranus/cmd/sample/uranus-sample $DESTDIR/usr/bin/uranus-sample
+cp $workdir/uranus/cmd/telegram/uranus-telegram $DESTDIR/usr/bin/uranus-telegram
+cp $workdir/uranus/cmd/web/uranus-web $DESTDIR/usr/bin/uranus-web
 
 mkdir -p $DESTDIR/etc/hackernel/
 cp $workdir/uranus/configs/telegram.yaml $DESTDIR/etc/hackernel/telegram.yaml
 cp $workdir/uranus/configs/web.yaml $DESTDIR/etc/hackernel/web.yaml
 
 mkdir -p $DESTDIR/etc/modules-load.d/
-mkdir -p $DESTDIR/etc/systemd/system/
+mkdir -p $DESTDIR/usr/lib/systemd/system/
 cp $workdir/hackernel/scripts/modules-load/hackernel.conf $DESTDIR/etc/modules-load.d/hackernel.conf
-cp $workdir/hackernel/scripts/systemd/hackernel.service $DESTDIR/etc/systemd/system/hackernel.service
-cp $workdir/uranus/init/uranus-telegram.service $DESTDIR/etc/systemd/system/uranus-telegram.service
-cp $workdir/uranus/init/uranus-web.service $DESTDIR/etc/systemd/system/uranus-web.service
+cp $workdir/hackernel/scripts/systemd/hackernel.service $DESTDIR/usr/lib/systemd/system/hackernel.service
+cp $workdir/uranus/init/uranus-telegram.service $DESTDIR/usr/lib/systemd/system/uranus-telegram.service
+cp $workdir/uranus/init/uranus-web.service $DESTDIR/usr/lib/systemd/system/uranus-web.service
