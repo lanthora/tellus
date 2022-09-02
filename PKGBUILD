@@ -1,4 +1,4 @@
-# Maintainer: lanthora <lanthora@outlook.com>
+# Maintainer: lanthora <lanthora at outlook dot com>
 
 pkgname=tellus-git
 pkgver=VERSION
@@ -25,11 +25,11 @@ prepare() {
 
 build() {
   cd "$pkgname"
-  make build
+  make arch-build
 }
 
 package() {
   cd "$pkgname"
-  make DESTDIR="$pkgdir/" install
+  make DESTDIR="$pkgdir/" arch-install
 }
 

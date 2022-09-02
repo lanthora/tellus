@@ -17,3 +17,9 @@ remove:
 
 dev:
 	@scripts/dev.sh
+
+arch-build:
+	scripts/arch-build.sh
+
+arch-install:
+	scripts/arch-install.sh

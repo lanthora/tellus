@@ -4,6 +4,7 @@ workdir=$(dirname $(dirname $(readlink -f "$0")))
 
 cd $workdir/hackernel/kernel-space/
 make remove
+
 rm /usr/sbin/hackernel
 rm /usr/sbin/uranus-sample
 rm /usr/sbin/uranus-telegram
