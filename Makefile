@@ -14,3 +14,6 @@ install:
 
 remove:
 	@scripts/remove.sh
+
+dev:
+	@scripts/dev.sh
