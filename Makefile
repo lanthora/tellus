@@ -19,7 +19,10 @@ dev:
 	@scripts/dev.sh
 
 arch-build:
-	scripts/arch-build.sh
+	@scripts/arch-build.sh
 
 arch-install:
-	scripts/arch-install.sh
+	@scripts/arch-install.sh
+
+gentoo-build:
+	@scripts/gentoo-build.sh
