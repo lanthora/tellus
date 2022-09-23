@@ -23,3 +23,6 @@ arch-build:
 
 arch-install:
 	scripts/arch-install.sh
+
+gentoo-build:
+	scripts/gentoo-build.sh
