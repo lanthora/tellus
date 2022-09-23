@@ -8,4 +8,5 @@ cmake $workdir/hackernel/user-space/ -DCMAKE_BUILD_TYPE=Release
 make
 
 cd $workdir/uranus
+make init
 make
