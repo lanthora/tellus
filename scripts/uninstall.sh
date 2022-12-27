@@ -1,9 +1,6 @@
 #/bin/bash
-set -v
-workdir=$(dirname $(dirname $(readlink -f "$0")))
-
-cd $workdir/hackernel/kernel-space/
-make remove
+rm /lib/modules/$(uname -r)/hackernel.ko
+depmod
 
 rm /usr/bin/hackernel
 rm /usr/bin/uranus-sample

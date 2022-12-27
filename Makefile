@@ -1,7 +1,7 @@
-default:
+dev:
 	@scripts/init.sh
 	@scripts/build.sh
-	@scripts/hello.sh
+	@scripts/done.sh
 
 init:
 	@scripts/init.sh
@@ -12,11 +12,8 @@ build:
 install:
 	@scripts/install.sh
 
-remove:
-	@scripts/remove.sh
-
-dev:
-	@scripts/dev.sh
+uninstall:
+	@scripts/uninstall.sh
 
 arch-build:
 	@scripts/arch-build.sh

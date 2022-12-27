@@ -1,9 +1,8 @@
 #/bin/bash
-set -v
 workdir=$(dirname $(dirname $(readlink -f "$0")))
 
-cd $workdir/hackernel/kernel-space/
-make install
+cp $workdir/hackernel/kernel-space/hackernel.ko /lib/modules/$(uname -r)/hackernel.ko
+depmod
 
 mkdir -p /usr/bin/
 cp $workdir/hackernel/user-space/build/hackernel /usr/bin/hackernel
