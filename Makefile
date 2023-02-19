@@ -24,4 +24,7 @@ arch-install:
 gentoo-build:
 	@scripts/gentoo-build.sh
 
+update-aur:
+	@scripts/update-aur.sh
+
 PHONY: default init build install uninstall arch-build arch-install gentoo-build
